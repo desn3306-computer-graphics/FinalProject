@@ -21,9 +21,7 @@
 #include "MaterialProperty.h"
 
 
-
 using namespace std;
-
 
 
 int main()
@@ -78,7 +76,6 @@ int main()
 	GLfloat deltaTime, prevTime;
 	deltaTime = prevTime = 0;
 	Camera_Control myCamera = Camera_Control(glm::vec3(0.0f, 10.0f, 20.0f), glm::vec3(0.0f, 1.0f, 0.0f), -90.0f, 0.0f, 0.002f);
-	float wheelVal = 45.0f;
 
 
 	//load external model
@@ -90,14 +87,13 @@ int main()
 	RandomMode* rotateXwing = new RandomMode(0.0f, 360 * 3.14159f, 0.001f, true);
 	RandomMode rotationMode = RandomMode(0, 2 * 3.1415, 0.001, true);
 	RandomMode translateMode = RandomMode(0, 97.99, 0.001);
-	glm::mat4 projModel = glm::perspective(glm::radians(45.0f), 1.0f, 0.1f, 100.0f);
 
-
+	//projection matrix
+	glm::mat4 projModel;
 
 	while (!myWindow.isWindowClosed()) 	// Loop until main window is closed
 	{
 
-		projModel = glm::perspective(glm::radians(wheelVal), 1.0f, 0.1f, 1000.0f);
 
 		//Adjusted Hardware Speed
 		GLfloat currentTime = glfwGetTime();
@@ -105,6 +101,11 @@ int main()
 		prevTime = currentTime;
 		myCamera.keyboardControl(myWindow.GetKeboardKeys(), deltaTime);
 		myCamera.MouseMovementControl(myWindow.GetXChange(), myWindow.GetYChange());
+		//scroll control for zoom function
+		myCamera.mouseScrollControl(myWindow.getYScrollChange());
+		//zoom in/out 
+		projModel = glm::perspective(glm::radians(myCamera.getFov()), 1.0f, 0.1f, 100.0f);
+
 		myShader->UseGpu();
 
 		myShader->SetDirectionalLight(&ambientDiffuseLight);

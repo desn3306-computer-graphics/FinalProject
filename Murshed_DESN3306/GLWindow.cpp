@@ -76,6 +76,8 @@ int GLWindow::InitGLWindow()
 	glfwSetKeyCallback(mainWindow, handleKeyboardKeys);
 	// Handle Mouse Movement
 	glfwSetCursorPosCallback(mainWindow, handleMouseMovements);
+	// Handle Mouse Scroll
+	glfwSetScrollCallback(mainWindow, handleMouseScroll);
 	//add window input listener for all callbacks 
 	glfwSetWindowUserPointer(mainWindow, this);
 
@@ -119,10 +121,10 @@ void GLWindow::handleMouseMovements(GLFWwindow* window, double xPos, double yPos
 	curWindow->prevY = yPos;
 	cout << "Mouse Movement(" << curWindow->xChange << "," << curWindow->yChange << ")" << endl;
 }
+void GLWindow::handleMouseScroll(GLFWwindow* window, double xoffset, double yoffset)
+{
+	GLWindow* curWindow = static_cast<GLWindow*>(glfwGetWindowUserPointer(window));
+	curWindow->yScrollChange = yoffset;
 
-
-
-
-
-
-
+	cout << "Mouse Scroll(" << yoffset << ")" << endl;
+}

@@ -73,8 +73,16 @@ void Camera_Control::MouseMovementControl(float xoffset, float yoffset)
 	front.z = sin(glm::radians(yaw)) * cos(glm::radians(pitch));
 	goFront = glm::normalize(front);
 }
+void Camera_Control::mouseScrollControl(double yoffset)
+{
+	//zoom in and out by changing the field of view (fov) of the projection matrix
+	fov -= (float)yoffset * zoomSensitivity;
 
-
+	if (fov < minFov)
+		fov = minFov;
+	if (fov > maxFov)
+		fov = maxFov;
+}
 glm::mat4 Camera_Control::calculateCameraViewMatrix()
 {
 	return glm::lookAt(curPos, curPos + goFront, lookUp);

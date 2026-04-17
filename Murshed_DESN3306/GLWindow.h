@@ -28,8 +28,14 @@ public:
 		yChange = 0;
 		return verticalMouseMovement;
 	}
+	GLfloat getYScrollChange() {
+		GLfloat change = yScrollChange;
+		yScrollChange = 0;
+		return change;
+	}
 	static void handleKeyboardKeys(GLFWwindow* window, int key, int code, int action, int mode);
 	static void handleMouseMovements(GLFWwindow* window, double xPos, double yPos);
+	static void handleMouseScroll(GLFWwindow* window, double xoffset, double yoffset);
 	~GLWindow();
 private:
 	GLFWwindow* mainWindow;
@@ -46,5 +52,7 @@ private:
 	GLfloat xChange;
 	GLfloat yChange;
 
+	//for mouse scroll
+	GLfloat yScrollChange;
 };
 
