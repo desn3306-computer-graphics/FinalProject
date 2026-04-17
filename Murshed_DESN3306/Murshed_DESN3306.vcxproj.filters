@@ -185,8 +185,12 @@
     <None Include="models\scene.dat" />
     <None Include="models\usa.dat" />
     <None Include="models\vinci.dat" />
+    <None Include="assimp-vc143-mtd.dll" />
+    <None Include="glew32.dll" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="Textures\PngLink.txt" />
+    <Text Include="Shaders\fShader.txt" />
+    <Text Include="Shaders\vShader.txt" />
   </ItemGroup>
 </Project>
