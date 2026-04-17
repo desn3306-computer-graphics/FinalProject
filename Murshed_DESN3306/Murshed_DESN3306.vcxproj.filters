@@ -126,4 +126,67 @@
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
+  <ItemGroup>
+    <Image Include="Textures\adf.jpg">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Textures\ai.jpg">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Textures\alt.jpg">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Textures\asi.jpg">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Textures\default-grey.jpg">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Textures\vsi.jpg">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Textures\texture.jpg">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Textures\Glass.jpg">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Textures\interior.jpg">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Textures\panel.jpg">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Textures\Stlamp1.jpg">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Textures\tmp.jpg">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Textures\wall.jpg">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Textures\Y0XGGL0904ADQEZJJPOX8NGZ5.jpg">
+      <Filter>Resource Files</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <Object Include="3DModels\aircraft.obj" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="3DModels\M7MF9IYOBPXDNI8AC5AGH3BMA.mtl" />
+    <None Include="models\birdhead.dat" />
+    <None Include="models\dino.dat" />
+    <None Include="models\dinosaur.dat" />
+    <None Include="models\dragon.dat" />
+    <None Include="models\house.dat" />
+    <None Include="models\knight.dat" />
+    <None Include="models\rex.dat" />
+    <None Include="models\scene.dat" />
+    <None Include="models\usa.dat" />
+    <None Include="models\vinci.dat" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="Textures\PngLink.txt" />
+  </ItemGroup>
 </Project>
